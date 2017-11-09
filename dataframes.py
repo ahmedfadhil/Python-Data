@@ -57,3 +57,27 @@ for col in df.columns:
     if col[:2] == '№':
         df.rename(columns={col: '#' + col[4:]}, inplace=True)
 print(df.head())
+
+print(df['Gold'] > 0)
+
+only_gold = df.where(df['Gold'] > 0)
+only_gold.head()
+
+goldy = only_gold['Gold'].count()
+
+diga = df['Gold'].count()
+
+only_gold = df[df['Gold'] > 0]
+only_gold.head()
+
+len(df[(df['Gold'] > 0) | df['Gold.1'] > 0])
+dataframe = df[(df['Gold.1'] > 0) & df['Gold'] == 0]
+
+df['country'] = df.index()
+df = df.set_index('Gold')
+df.head()
+
+df = df.reset_index()
+df.head()
+
+
